@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+  <!-- карточки товара -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          {% if book.picture %}
+          <img src="{{book.picture.url}}" class="card-img-top" alt="Товар 1">
+          {% else %}
+           <img src="https://edit.org/images/cat/book-covers-big-2019101610.jpg" class="card-img-top" alt="Товар 1">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{book.name}} {{book.author}}</h5>
+            <p class="card-text">{{book.info}} 1</p>
+
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+      <!-- конец карточек товара -->
+
+    </div>
+  </div>
+
+{% endblock %}

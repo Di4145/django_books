@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <!-- карточки товара -->
+  <div class="container">
+    <div class="row">
+
+        {% for i in books %}
+
+
+
+        <div class="col-md-4">
+        <div class="card">
+            {% if i.picture %}
+          <a href="{% url 'detail_page' i.id %}"><img src="{{i.picture.url}}" class="card-img-top" alt="Товар 1">
+<!--          <a href="{% url 'detail_page' i.id %}"><img src="https://edit.org/images/cat/book-covers-big-2019101610.jpg" class="card-img-top" alt="Товар 1">-->
+          {% else %}
+          <a href="{% url 'detail_page' i.id %}"><img src="https://edit.org/images/cat/book-covers-big-2019101610.jpg" class="card-img-top" alt="Товар 1">
+             {% endif %}
+              <div class="card-body">
+            <h5 class="card-title">{{i.name}} {{i.author}}</h5>
+
+            <a href="{% url 'detail_page' i.id %}"></a>
+          </div>
+        </div>
+        </div>
+
+          {% endfor %}
+
+
+      <!-- конец карточек товара -->
+
+    </div>
+  </div>
+{% endblock %}

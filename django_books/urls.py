@@ -10,5 +10,7 @@ urlpatterns = [
     path('book/<int:pk>', book_detail_view, name='detail_page')
 ]
 
+
+
 if settings.DEBUG is True:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

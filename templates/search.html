@@ -1,6 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
+{% for i in janres %}
+<a href="{% url 'search_page' i.id %}"> {{i.janre_book}} </a> /
+{% endfor %}
+<br>
+ <div class="container">
+     <form action="" method="get">
+         <input name="author" placeholder="Автор">
+
+
+     </form>
+
+      </div>
+
+
+<br>
+<br>
+
   <!-- карточки товара -->
   <div class="container">
     <div class="row">
@@ -18,9 +35,8 @@
           <a href="{% url 'detail_page' i.id %}"><img src="https://edit.org/images/cat/book-covers-big-2019101610.jpg" class="card-img-top" alt="Товар 1"></a>
              {% endif %}
               <div class="card-body">
-            <h5 class="card-title"> {{i.name}} </h5>
-                    <h5 class="card-title"> {{i.author}}</h5>
-                  <h5 class="card-title"> {{i.janre}}</h5>
+            <h5 class="card-title"> {{i.janre}}</h5>
+            <h5 class="card-title"> {{i.name}} {{i.author}}</h5>
                   <p class="card-text">{{i.info|truncatewords:15}} </p>
             <a href="{% url 'detail_page' i.id %}"></a>
           </div>

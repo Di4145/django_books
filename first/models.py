@@ -26,3 +26,8 @@ class Author(models.Model):
 
     def __str__(self):
         return self.author_book
+
+
+class USD(models.Model):
+    usd_now = models.FloatField()
+    data = models.DateTimeField(auto_now=True)

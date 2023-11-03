@@ -14,3 +14,4 @@ class BookAdmin(admin.ModelAdmin):
 admin.site.register(first.models.Janre)
 admin.site.register(first.models.Author)
 admin.site.register(first.models.Book, BookAdmin)
+admin.site.register(first.models.USD)
